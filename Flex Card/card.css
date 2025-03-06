@@ -1,0 +1,131 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    gap: 20px;
+}
+
+/* First Row (Big Card + One Small Thin Card) */
+.row:first-child {
+    display: flex;
+    gap: 20px;
+}
+
+/* Second Row (Three Smaller Cards) */
+.row:nth-child(2) {
+    display: flex;
+    gap: 20px;
+}
+
+/* Card Styling */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image Styling */
+.card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* BIG CARD - Taller & Wider */
+#big {
+    flex: 2;  /* More width */
+    height: 450px; /* Increased height */
+}
+
+/* Adjust Image Size for Big Card */
+#big img {
+    height: 60%; /* Increase image height */
+}
+
+/* SMALL TALL CARD */
+#small {
+    flex: 0.8; /* Make it thinner */
+    height: 450px; /* Increase height */
+}
+
+/* Adjust Image Size for Small Card */
+#small img {
+    height: 50%; /* Reduce image height */
+}
+
+/* Second Row Small Cards (Same Styling as Small Card) */
+.row:nth-child(2) .card {
+    flex: 1;
+    height: 350px;
+}
+
+/* Adjust Image Size for Second Row Cards */
+.row:nth-child(2) .card img {
+    height: 50%;
+}
+
+/* Card Content */
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Card Titles */
+.card h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Buttons */
+.bttn {
+    width: 100%;
+    padding: 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-top: auto;
+}
+
+.bttn:hover {
+    background-color: darkgray;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    #big, #small {
+        flex: none;
+        width: 90%;
+        height: auto;
+    }
+}
